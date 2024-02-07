@@ -3,12 +3,14 @@
 #include <cstdlib>
 #include <vector>
 
+using namespace std;
+
 // Define stacks for row and column
-std::stack<int> row;
-std::stack<int> col;
+stack<int> row;
+stack<int> col;
 
 // Define vector to hold filled columns
-std::vector<int> filledcol;
+vector<int> filledcol;
 
 // Define boolean variable
 bool works;
@@ -93,12 +95,12 @@ void print() {
     for (int i = 0; i < n; i++) {
         for (int j = 1; j <= n; j++) {
             if (col.top() == j) {
-                std::cout << " Q ";
+                cout << " Q ";
             } else {
-                std::cout << " 0 ";
+                cout << " 0 ";
             }
         }
-        std::cout << "Queen " << queen << std::endl << std::endl;
+        cout << "Queen " << queen << endl << endl;
         queen--;
         row.pop();
         col.pop();
@@ -108,13 +110,13 @@ void print() {
 // Main function
 int main() {
     // Prompt user to input the number of queens
-    std::cout << "Enter the number of queens you would like: ";
-    std::cin >> n;
+    cout << "Enter the number of queens you would like: ";
+    cin >> n;
 
     // Ensure that the input value for the number of queens is greater than 3
     while (n < 4) {
-        std::cout << "Please enter a number greater than 3 for the number of queens." << std::endl;
-        std::cin >> n;
+        cout << "Please enter a number greater than 3 for the number of queens." << endl;
+        cin >> n;
     }
 
     // Initialize the location of the queens in the bottom left of the chessboard
